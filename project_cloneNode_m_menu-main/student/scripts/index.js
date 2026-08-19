@@ -1,0 +1,43 @@
+//student index.js
+//1. 데스크탑 내비 복제 -> 모바일 내비 위치에 붙여넣기
+const full_nav = document.querySelector('.full_nav .menu'); //복제대상
+const m_nav = document.querySelector('#m_nav'); //붙여넣기위치
+
+console.log(full_nav, m_nav);
+
+const cloneNav = full_nav.cloneNode(true);//복제 실행
+m_nav.appendChild(cloneNav); //붙여넣기 적용
+
+console.log(m_nav);
+
+//2. 모바일 메뉴(햄버거) 클릭 시 모바일배경+모바일메뉴 출력하기
+const m_nav_btn = document.querySelector('#m_nav_btn'); //클릭대상
+const m_nav_bg = document.querySelector('.m_nav_bg'); //나오는 제일바깥쪽 부모대상
+console.log(m_nav_btn, m_nav_bg);
+
+//안보인다 0 컴퓨터가 이해하는 언어로 초기값 설정
+let menu_visible = 0; //안보이는 초기인(상태변수) 설정
+
+m_nav_btn.addEventListener('click',()=>{
+    // 기존css에서 어떤속성으로 숨겨져 있었는지에 따라 반대되는 값 작성
+    //m_nav_bg.style.right = '0%';
+    //m_nav_bg.style.opacity = '1';
+    //m_nav_btn.style.filter ='invert(1)';
+    //클릭 이벤트의 동작이 1개다 == (위 명령어로 끝)
+    //클릭 이벤트의 동작이 2개 이상이다 == (조건에 따른 함수 실행으로 코드 업데이트)
+    //보인다? 안보인다?라는 뜻은 조건으로 불가능 -> 컴퓨터가 이해하는 언어 0과1로 변경
+    menu_visible = !menu_visible; //클릭이벤트가 실행될때마다 상태변수값 반전
+    console.log(menu_visible); //반전되는 값 확인
+    //메뉴의 보이는상태 (menu_visible)가 0(안보이는)값이면 어떻게 할 것인가?
+    menu_visible == 0 ? (()=>{
+        //안보인다 (참) -> right:0, opacity:1
+        m_nav_bg.style.right = '0%';
+        m_nav_bg.style.opacity = '1';
+        m_nav_btn.style.filter ='invert(1)';
+    })() : (()=>{
+        //보인다 (거짓) -> right:-100%, opacity:0
+        m_nav_bg.style.right = '-100%';
+        m_nav_bg.style.opacity = '0';
+        m_nav_btn.style.filter ='invert(0)';
+    })();
+})
