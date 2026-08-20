@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스제어 조건문 기초</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <script src="./scripts/class_if.js" defer></script>
+    <style>
+        /* 내부 스타일시트 위치 */
+        #like_btn {
+            border-radius:50%; width:24px; height:24px; 
+            background:#eee; color:#888;
+        }
+        .like_active {background:pink !important; color:red !important;}
+        .target_showHide {display:none;}
+        .button_click {color:#f00;}
+        .design_set1{
+            border-bottom:1px solid #000;
+            background-color:#ff0;
+            padding:15px 6px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ul.contents>li*4>a -->
+    <ul class="contents">
+        <li><a href="#">내용1</a></li>
+        <li><a href="#">내용2</a></li>
+        <li><a href="#">내용3</a></li>
+        <li><a href="#">내용4</a></li>
+    </ul>
+    <hr>
+    <button type="button" id="search_btn">검색</button>
+    <div class="search_open_wrap">
+        <input type="text" name="search_txt" id="search_txt">
+        <button type="submit" id="search_txt_btn">검색하기</button>
+    </div>
+    <hr>
+    <button type="button" id="like_btn">♥</button>
+    <hr>
+    <button type="button" id="print_btn">인쇄</button>
+</body>
+</html>
