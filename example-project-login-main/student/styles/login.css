@@ -138,6 +138,7 @@ main .login-box #login-frm .contents ul li input[type=checkbox] + label {
 }
 main .login-box #login-frm .contents ul li input[type=checkbox]:checked + label {
     background-image:url(../images/approved.png);
+    background-size:24px;
 }
 /* -----------------------------------------------------아이디 저장 종료 */
 main .login-box #login-frm .contents ul li button[id*=member-login] {
